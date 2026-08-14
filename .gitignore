@@ -1,0 +1,10 @@
+node_modules
+dist
+.DS_Store
+*.local
+.vite
+# index.json 由 CI 与本地 predev/prebuild 脚本生成，不入版本库
+public/index.json
+
+# IDE
+.idea/

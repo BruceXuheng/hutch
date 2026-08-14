@@ -1,0 +1,25 @@
+{
+  "name": "hutch",
+  "version": "0.1.0",
+  "description": "Hutch · 器舍 — 顺手就打开的个人工具箱",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/build-index.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/build-index.mjs",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "pinia": "^2.2.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.0",
+    "gray-matter": "^4.0.3",
+    "pinyin-pro": "^3.26.0",
+    "vite": "^5.4.0"
+  }
+}
