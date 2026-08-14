@@ -46,26 +46,27 @@ function onSelect(tool) {
 .hero {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 48px 24px 8px;
+  padding: 72px 24px 16px;
   position: relative;
   z-index: 1;
 }
 .hero h1 {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 600;
-  letter-spacing: -.5px;
-  margin-bottom: 8px;
+  letter-spacing: -.8px;
+  margin-bottom: 12px;
 }
 .hero h1 .accent { color: var(--primary); }
 .hero p {
   color: var(--on-surface-2);
-  font-size: 15px;
-  max-width: 560px;
+  font-size: 16px;
+  max-width: 580px;
+  line-height: 1.6;
 }
 .hero .stats {
   display: flex;
   gap: 24px;
-  margin-top: 20px;
+  margin-top: 24px;
   color: var(--on-surface-3);
   font-size: 13px;
 }
@@ -74,7 +75,7 @@ function onSelect(tool) {
   font-weight: 600;
 }
 @media (max-width: 720px) {
-  .hero { padding: 28px 16px 4px; }
-  .hero h1 { font-size: 24px; }
+  .hero { padding: 40px 16px 8px; }
+  .hero h1 { font-size: 28px; letter-spacing: -.4px; }
 }
 </style>

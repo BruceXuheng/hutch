@@ -1,8 +1,54 @@
-/* 设计 token — Material 3 Dark + 科技感
-   来源：design-demo.html :root，所有组件共享这些变量 */
+/* 设计 token — Material 3 / android.com 风
+   双主题：:root=亮色默认，[data-theme="dark"]=暗色
+   组件只读 var(--xxx)，不硬编码颜色，主题切换自动跟随 */
 
 :root {
-  /* 色彩 */
+  /* 色彩 — 亮色（android.com / Google 配色） */
+  --bg: #f8f9fa;
+  --surface: #ffffff;
+  --surface-2: #f1f3f4;
+  --surface-3: #e8eaed;
+  --outline: #dadce0;
+  --outline-2: #bdc1c6;
+  --on-surface: #202124;
+  --on-surface-2: #5f6368;
+  --on-surface-3: #80868b;
+  --primary: #1a73e8;
+  --primary-2: #4285f4;
+  --tertiary: #a142f4;
+  --success: #1e8e3e;
+  --warning: #f9ab00;
+  --danger: #d93025;
+
+  /* 半透明层（亮色底上的柔和高亮） */
+  --primary-12: rgba(26,115,232,.12);
+  --primary-14: rgba(26,115,232,.14);
+  --danger-08: rgba(217,48,37,.08);
+  --danger-25: rgba(217,48,37,.25);
+  --warning-10: rgba(249,171,0,.12);
+  --warning-30: rgba(249,171,0,.35);
+
+  /* 背景装饰 + AppBar */
+  --grid-line: rgba(26,115,232,.04);
+  --bar-bg: rgba(255,255,255,.82);
+  --logo-fg: #ffffff;
+
+  /* 形状 — android 圆润大圆角 */
+  --radius-card: 24px;
+  --radius-pill: 999px;
+  --radius-chip: 999px;
+
+  /* 层次 — 浅灰柔和阴影 */
+  --shadow-1: 0 1px 2px rgba(60,64,67,.08), 0 1px 3px rgba(60,64,67,.06);
+  --shadow-2: 0 4px 12px rgba(60,64,67,.10), 0 2px 6px rgba(60,64,67,.06);
+
+  /* 字体 */
+  --font: Inter, "Google Sans", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --mono: "JetBrains Mono", "SF Mono", "Cascadia Code", Consolas, monospace;
+}
+
+[data-theme="dark"] {
+  /* 色彩 — 暗色（原深色科技风） */
   --bg: #0d0e11;
   --surface: #16181d;
   --surface-2: #1d2026;
@@ -19,16 +65,26 @@
   --warning: #fdd663;
   --danger: #f28b82;
 
-  /* 形状 */
-  --radius-card: 16px;
-  --radius-pill: 28px;
-  --radius-chip: 20px;
+  /* 半透明层（暗色底上的柔和高亮） */
+  --primary-12: rgba(138,180,248,.12);
+  --primary-14: rgba(138,180,248,.14);
+  --danger-08: rgba(242,139,130,.08);
+  --danger-25: rgba(242,139,130,.25);
+  --warning-10: rgba(253,214,99,.10);
+  --warning-30: rgba(253,214,99,.30);
 
-  /* 层次 */
+  /* 背景装饰 + AppBar */
+  --grid-line: rgba(138,180,248,.025);
+  --bar-bg: rgba(13,14,17,.82);
+  --logo-fg: #0d0e11;
+
+  /* 阴影 — 暗色更深 */
   --shadow-1: 0 1px 2px rgba(0,0,0,.3), 0 1px 3px rgba(0,0,0,.15);
   --shadow-2: 0 4px 12px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.2);
+}
 
-  /* 字体 */
-  --font: Inter, "Google Sans", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-  --mono: "JetBrains Mono", "SF Mono", "Cascadia Code", Consolas, monospace;
+/* 主题切换全局平滑过渡（背景/颜色丝滑） */
+:root {
+  transition: background-color var(--dur, .2s) var(--ease, cubic-bezier(.2,0,0,1)),
+              color var(--dur, .2s) var(--ease, cubic-bezier(.2,0,0,1));
 }

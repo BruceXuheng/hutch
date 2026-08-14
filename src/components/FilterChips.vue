@@ -62,7 +62,7 @@ const chips = [
   color: var(--on-surface);
 }
 .chip.active {
-  background: rgba(138,180,248,.12);
+  background: var(--primary-12);
   border-color: var(--primary);
   color: var(--primary);
 }

@@ -1,9 +1,11 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import QRCode from 'qrcode'
 import { useToast } from '../composables/useToast'
+import { useTheme } from '../composables/useTheme'
 
 const { show } = useToast()
+const { theme } = useTheme()
 
 const text = ref('https://brucexuheng.github.io/hutch/')
 const level = ref('M')        // 容错 L/M/Q/H
@@ -11,6 +13,11 @@ const size = ref(256)         // 像素尺寸
 const margin = ref(2)         // 边距
 const dataUrl = ref('')
 const err = ref('')
+
+// 二维码配色随主题：亮色=白底深码；暗色=深底浅码（适配深色卡片）
+const qrColor = computed(() => theme.value === 'dark'
+  ? { dark: '#e3e3e6', light: '#0d0e11' }
+  : { dark: '#202124', light: '#ffffff' })
 
 async function generate() {
   if (!text.value.trim()) { err.value = '请输入文本'; dataUrl.value = ''; return }
@@ -20,7 +27,7 @@ async function generate() {
       errorCorrectionLevel: level.value,
       width: size.value,
       margin: margin.value,
-      color: { dark: '#0d0e11', light: '#e3e3e6' }  // 深底浅码（视觉反转适配深色站）
+      color: qrColor.value
     })
     show('已生成')
   } catch (e) {
@@ -29,12 +36,13 @@ async function generate() {
   }
 }
 
-// 输入变化自动重新生成（防抖）
+// 输入变化自动重新生成（防抖）；主题切换也要重生成
 let timer
 watch([text, level, size, margin], () => {
   clearTimeout(timer)
   timer = setTimeout(generate, 200)
 })
+watch(theme, () => generate())
 
 function download() {
   if (!dataUrl.value) return
@@ -117,11 +125,11 @@ generate()
 }
 .btn:hover:not(:disabled) { border-color: var(--primary); }
 .btn:disabled { opacity: .4; cursor: not-allowed; }
-.btn.primary { background: rgba(138,180,248,.14); border-color: var(--primary); color: var(--primary); }
+.btn.primary { background: var(--primary-14); border-color: var(--primary); color: var(--primary); }
 .btn.ghost { background: transparent; color: var(--on-surface-3); }
 .err {
   color: var(--danger); font-size: 12px; font-family: var(--mono);
-  background: rgba(242,139,130,.08); border: 1px solid rgba(242,139,130,.25);
+  background: var(--danger-08); border: 1px solid var(--danger-25);
   border-radius: 8px; padding: 8px 12px;
 }
 .preview {

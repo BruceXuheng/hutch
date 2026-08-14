@@ -84,7 +84,7 @@ generate()
 }
 .btn:hover:not(:disabled) { border-color: var(--primary); }
 .btn:disabled { opacity: .4; cursor: not-allowed; }
-.btn.primary { background: rgba(138,180,248,.14); border-color: var(--primary); color: var(--primary); }
+.btn.primary { background: var(--primary-14); border-color: var(--primary); color: var(--primary); }
 .list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
 .list li {
   display: flex; align-items: center; gap: 10px;

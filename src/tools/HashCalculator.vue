@@ -128,11 +128,11 @@ textarea:disabled { opacity: .5; }
 }
 .btn:hover:not(:disabled) { border-color: var(--primary); }
 .btn:disabled { opacity: .4; cursor: not-allowed; }
-.btn.primary { background: rgba(138,180,248,.14); border-color: var(--primary); color: var(--primary); }
+.btn.primary { background: var(--primary-14); border-color: var(--primary); color: var(--primary); }
 .btn.ghost { background: transparent; color: var(--on-surface-3); }
 .err {
   color: var(--danger); font-size: 12px; font-family: var(--mono);
-  background: rgba(242,139,130,.08); border: 1px solid rgba(242,139,130,.25);
+  background: var(--danger-08); border: 1px solid var(--danger-25);
   border-radius: 8px; padding: 8px 12px;
 }
 .result label { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--on-surface-3); }

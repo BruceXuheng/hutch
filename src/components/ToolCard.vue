@@ -163,8 +163,8 @@ const RUNTIME_MAP = {
   top: 16px; right: 16px;
   font-size: 11px;
   color: var(--warning);
-  background: rgba(253,214,99,.1);
-  border: 1px solid rgba(253,214,99,.3);
+  background: var(--warning-10);
+  border: 1px solid var(--warning-30);
   border-radius: 8px;
   padding: 3px 8px;
   font-weight: 500;

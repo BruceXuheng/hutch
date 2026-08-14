@@ -130,7 +130,7 @@ async function copy(text) {
   cursor: pointer; transition: all .15s;
 }
 .btn:hover { border-color: var(--primary); }
-.btn.primary { background: rgba(138,180,248,.14); border-color: var(--primary); color: var(--primary); }
+.btn.primary { background: var(--primary-14); border-color: var(--primary); color: var(--primary); }
 .btn.ghost { background: transparent; color: var(--on-surface-3); }
 .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .col { display: flex; flex-direction: column; gap: 8px; }
@@ -150,7 +150,7 @@ textarea {
 textarea:focus { border-color: var(--primary); }
 .err {
   color: var(--danger); font-size: 12px; font-family: var(--mono);
-  background: rgba(242,139,130,.08); border: 1px solid rgba(242,139,130,.25);
+  background: var(--danger-08); border: 1px solid var(--danger-25);
   border-radius: 8px; padding: 8px 12px;
 }
 .path-row { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }

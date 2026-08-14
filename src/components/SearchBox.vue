@@ -66,7 +66,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
 .search-input:focus {
   border-color: var(--primary);
   background: var(--surface-2);
-  box-shadow: 0 0 0 4px rgba(138,180,248,.12);
+  box-shadow: 0 0 0 4px var(--primary-12);
 }
 .search-icon {
   position: absolute;
