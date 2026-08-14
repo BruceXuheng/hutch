@@ -27,6 +27,7 @@ jobs:
       - run: npm ci
       - run: node scripts/build-index.mjs
       - run: npm run build
+      - run: cp dist/index.html dist/404.html   # SPA history fallback：直接访问 /tool/<id> 不 404
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
