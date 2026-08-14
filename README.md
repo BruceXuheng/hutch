@@ -3,6 +3,8 @@
 > 一个顺手就打开的个人工具箱：本地前端工具、联网 AI 助手、精选在线服务，统一入口。
 > 关键词 + 正文中英文检索，即搜即用。
 
+🔗 在线访问：<https://brucexuheng.github.io/hutch/>
+
 ## 技术栈
 
 - **Vite + Vue 3**（`<script setup>` SFC）
